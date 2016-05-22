@@ -1,14 +1,13 @@
 ﻿'use strict';
 
 //  THE DIRECTIVE FOR ALL OF THE TWEETS BEING DISPLAYED
-//  DI THE TWITTER SERVICE AS WELL AS $window
 angular.module('turnerApp')
     .directive('movieCard', ['MovieService', '$window', function (MovieService, $window) {
         return{
             restrict: 'E',
             scope:{
-                q: '@', //  QUERY FOR SEARCHING FEEDS
-                f: '='  //  QUERY FEEDS BASED ON A FROM
+                q: '@', //  QUERY FOR SEARCHING MOVIES
+                f: '='  //  QUERY MOVIES BASED ON A Q
             },
             templateUrl: 'app/directives/movieCard.html',
             link: function($scope, element, attrs){
