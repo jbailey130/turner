@@ -1,0 +1,24 @@
+﻿<div ng-cloak>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div ng-repeat="movieRow in movies" flex-xs flex-gt-xs="25" layout="column">
+            <md-card ng-repeat="movie in movieRow" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">
+                            {{movie.Title}}
+                        </span>
+                        <span class="md-subhead" ng-bind-html="movie.ReleaseYear">
+                        </span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media">
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-show="tweet.article_link" ng-click="go( tweet.article_link  )">Details</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>
+</div>
